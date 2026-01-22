@@ -28,6 +28,9 @@ function updateSelectionUI() {
     domEl.classList.add("selected");
     addResizeHandles(domEl);
   }
+
+  syncRotationUI();
+
 }
 
 
