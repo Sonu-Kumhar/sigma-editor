@@ -67,6 +67,8 @@ function renderElement(data) {
   el.style.height = data.height + "px";
   el.style.zIndex = data.zIndex;
   el.dataset.id = data.id;
+  
+el.addEventListener("click", handleElementClick);
+canvas.appendChild(el);
 
-  canvas.appendChild(el);
 }
