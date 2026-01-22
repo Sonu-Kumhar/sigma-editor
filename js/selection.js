@@ -31,6 +31,7 @@ function updateSelectionUI() {
 
   syncRotationUI();
   renderLayers();
+syncPropertiesUI(); 
 
 }
 
