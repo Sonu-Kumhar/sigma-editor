@@ -11,12 +11,12 @@ function handleElementClick(e) {
 }
 
 function updateSelectionUI() {
-  // sabse pehle sab deselect
+  // sab deselect + handles hatao
   document.querySelectorAll(".editor-element").forEach((el) => {
     el.classList.remove("selected");
+    removeResizeHandles(el);
   });
 
-  // phir selected element pe class lagao
   const selected = getSelectedElement();
   if (!selected) return;
 
@@ -26,8 +26,10 @@ function updateSelectionUI() {
 
   if (domEl) {
     domEl.classList.add("selected");
+    addResizeHandles(domEl);
   }
 }
+
 
 // Canvas click → deselect
 canvas.addEventListener("click", () => {
