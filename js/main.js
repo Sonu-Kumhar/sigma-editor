@@ -13,3 +13,7 @@ loadFromStorage();
 const exportJsonBtn = document.getElementById("export-json");
 
 exportJsonBtn.addEventListener("click", exportAsJSON);
+
+const exportHtmlBtn = document.getElementById("export-html");
+
+exportHtmlBtn.addEventListener("click", exportAsHTML);
