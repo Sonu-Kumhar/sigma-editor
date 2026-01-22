@@ -81,3 +81,27 @@ body {
 .property input {
   padding: 4px;
 }
+
+
+.layer-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+#layers-list {
+  list-style: none;
+}
+
+#layers-list li {
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+#layers-list li.active {
+  background: #e6f0ff;
+  border-color: #4a90e2;
+}

@@ -30,6 +30,7 @@ function updateSelectionUI() {
   }
 
   syncRotationUI();
+  renderLayers();
 
 }
 

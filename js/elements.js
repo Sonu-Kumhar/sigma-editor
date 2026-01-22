@@ -71,5 +71,6 @@ function renderElement(data) {
 el.addEventListener("click", handleElementClick);
 el.addEventListener("mousedown", onMouseDownDrag);
 canvas.appendChild(el);
+renderLayers();
 
 }
