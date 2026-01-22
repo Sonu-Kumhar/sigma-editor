@@ -1,1 +1,18 @@
  /* rectangle, text box styles */
+
+ .editor-element {
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rectangle {
+  background-color: #4a90e2;
+}
+
+.text-box {
+  background-color: transparent;
+  padding: 6px;
+  font-size: 16px;
+  color: #000;
+}
