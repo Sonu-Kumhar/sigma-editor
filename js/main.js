@@ -9,3 +9,7 @@ addRectBtn.addEventListener("click", createRectangle);
 addTextBtn.addEventListener("click", createTextBox);
 
 loadFromStorage();
+
+const exportJsonBtn = document.getElementById("export-json");
+
+exportJsonBtn.addEventListener("click", exportAsJSON);
