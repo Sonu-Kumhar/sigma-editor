@@ -123,4 +123,6 @@ function stopResize() {
 
   document.removeEventListener("mousemove", onResizeMove);
   document.removeEventListener("mouseup", stopResize);
+  saveToStorage();
+
 }

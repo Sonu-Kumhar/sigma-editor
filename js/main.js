@@ -7,3 +7,5 @@ const addTextBtn = document.getElementById("add-text");
 
 addRectBtn.addEventListener("click", createRectangle);
 addTextBtn.addEventListener("click", createTextBox);
+
+loadFromStorage();

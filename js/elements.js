@@ -23,6 +23,8 @@ function createRectangle() {
 
   editorState.elements.push(elementData);
   renderElement(elementData);
+  saveToStorage();
+
 }
 
 // Create Text Box
@@ -44,6 +46,8 @@ function createTextBox() {
 
   editorState.elements.push(elementData);
   renderElement(elementData);
+  saveToStorage();
+
 }
 
 function renderElement(data) {

@@ -66,4 +66,6 @@ function onMouseUpDrag() {
 
   document.removeEventListener("mousemove", onMouseMoveDrag);
   document.removeEventListener("mouseup", onMouseUpDrag);
+  saveToStorage();
+
 }

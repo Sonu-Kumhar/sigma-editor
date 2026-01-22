@@ -71,6 +71,8 @@ function deleteSelectedElement() {
 
   clearSelection();
   updateSelectionUI();
+  saveToStorage();
+
 }
 
 // ===== UPDATE POSITION =====
@@ -83,4 +85,6 @@ function updateDomPosition(selected) {
 
   domEl.style.left = selected.x + "px";
   domEl.style.top = selected.y + "px";
+  saveToStorage();
+
 }

@@ -54,6 +54,8 @@ widthInput.addEventListener("input", () => {
   selected.width = value;
 
   updateDom(selected);
+  saveToStorage();
+
 });
 
 // ===== HEIGHT =====
@@ -65,6 +67,8 @@ heightInput.addEventListener("input", () => {
   selected.height = value;
 
   updateDom(selected);
+  saveToStorage();
+
 });
 
 // ===== BACKGROUND =====
@@ -78,6 +82,8 @@ bgInput.addEventListener("input", () => {
   if (domEl) {
     domEl.style.backgroundColor = bgInput.value;
   }
+  saveToStorage();
+
 });
 
 // ===== TEXT =====
@@ -91,6 +97,8 @@ textInput.addEventListener("input", () => {
   if (domEl) {
     domEl.textContent = textInput.value;
   }
+  saveToStorage();
+
 });
 
 // ===== HELPERS =====
@@ -106,4 +114,5 @@ function updateDom(selected) {
 
   domEl.style.width = selected.width + "px";
   domEl.style.height = selected.height + "px";
+  
 }

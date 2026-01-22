@@ -19,6 +19,8 @@ rotationInput.addEventListener("input", () => {
   if (domEl) {
     domEl.style.transform = `rotate(${angle}deg)`;
   }
+  saveToStorage();
+
 });
 
 // Sync rotation slider on selection change

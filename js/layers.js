@@ -83,4 +83,6 @@ function updateZIndices() {
   });
 
   renderLayers();
+  saveToStorage();
+
 }
