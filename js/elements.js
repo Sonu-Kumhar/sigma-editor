@@ -40,6 +40,8 @@ function createTextBox() {
     width: 180,
     height: 40,
     rotation: 0,
+    color: "#ffffff",     // ✅ NEW
+    fontSize: 16,         // ✅ NEW
     backgroundColor: "transparent",
     text: "Edit text",
     zIndex: editorState.elements.length + 1,
@@ -64,7 +66,10 @@ function renderElement(data) {
   if (data.type === "text") {
     el.classList.add("text-box");
     el.textContent = data.text;
+    el.style.color = data.color;
+    el.style.fontSize = data.fontSize + "px";
   }
+
 
   el.style.left = data.x + "px";
   el.style.top = data.y + "px";

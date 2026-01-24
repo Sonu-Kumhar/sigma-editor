@@ -1,6 +1,9 @@
 // properties panel binding
 
 // js/properties.js
+const textColorInput = document.getElementById("prop-text-color");
+const fontSizeInput = document.getElementById("prop-font-size");
+
 
 const widthInput = document.getElementById("prop-width");
 const heightInput = document.getElementById("prop-height");
@@ -24,12 +27,45 @@ function syncPropertiesUI() {
 
   if (selected.type === "text") {
     textInput.disabled = false;
+    textColorInput.disabled = false;
+    fontSizeInput.disabled = false;
+
     textInput.value = selected.text;
+    textColorInput.value = selected.color;
+    fontSizeInput.value = selected.fontSize;
   } else {
     textInput.disabled = true;
-    textInput.value = "";
+    textColorInput.disabled = true;
+    fontSizeInput.disabled = true;
   }
+
 }
+
+textColorInput.addEventListener("input", () => {
+  const selected = getSelectedElement();
+  if (!selected || selected.type !== "text") return;
+
+  selected.color = textColorInput.value;
+
+  const domEl = getDom(selected);
+  if (domEl) domEl.style.color = selected.color;
+
+  saveToStorage();
+});
+
+fontSizeInput.addEventListener("input", () => {
+  const selected = getSelectedElement();
+  if (!selected || selected.type !== "text") return;
+
+  const size = Math.max(8, Number(fontSizeInput.value));
+  selected.fontSize = size;
+
+  const domEl = getDom(selected);
+  if (domEl) domEl.style.fontSize = size + "px";
+
+  saveToStorage();
+});
+
 
 // ===== ENABLE / DISABLE =====
 function disableProperties() {
@@ -114,5 +150,5 @@ function updateDom(selected) {
 
   domEl.style.width = selected.width + "px";
   domEl.style.height = selected.height + "px";
-  
+
 }
