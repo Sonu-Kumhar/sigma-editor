@@ -360,3 +360,19 @@ body {
   opacity: 1;
 }
 
+#side-panel {
+  height: 100%;
+  overflow: hidden;
+}
+#layers-panel {
+  flex: 0 0 40%;
+  overflow-y: auto;
+}
+#properties-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 24px;
+}
+#layers-panel {
+  border-bottom: 1px solid var(--border-color);
+}
