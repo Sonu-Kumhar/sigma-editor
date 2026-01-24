@@ -135,16 +135,6 @@ body {
   pointer-events: none;
 }
 
-/* ===== SIDE PANEL ===== */
-#side-panel {
-  width: 300px;
-  background: var(--bg-secondary);
-  display: flex;
-  flex-direction: column;
-  border-left: 1px solid var(--border-color);
-  box-shadow: var(--shadow-lg);
-}
-
 /* ===== PANELS ===== */
 #layers-panel,
 #properties-panel {
@@ -359,20 +349,46 @@ body {
 #layers-list li.active::before {
   opacity: 1;
 }
+#editor {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 320px;
+  height: calc(100vh - 56px);
+}
 
-#side-panel {
+/* LEFT: Layers panel (LOCK WIDTH) */
+#layers-panel {
+  grid-column: 1;
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
   height: 100%;
-  overflow: hidden;
-}
-#layers-panel {
-  flex: 0 0 40%;
   overflow-y: auto;
 }
+
+/* FIX: buttons stretching grid */
+.layer-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.layer-actions button {
+  flex: unset;        /* 🔥 VERY IMPORTANT */
+  width: 100%;
+}
+
+/* CENTER: Canvas */
+#canvas {
+  grid-column: 2;
+  height: 100%;
+  min-width: 0;       /* 🔥 grid overflow killer */
+}
+
+/* RIGHT: Properties panel (LOCK WIDTH) */
 #properties-panel {
-  flex: 1;
+  grid-column: 3;
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+  height: 100%;
   overflow-y: auto;
-  padding-bottom: 24px;
-}
-#layers-panel {
-  border-bottom: 1px solid var(--border-color);
 }
