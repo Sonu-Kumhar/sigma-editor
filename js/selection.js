@@ -36,8 +36,8 @@ syncPropertiesUI();
 }
 
 
-// Canvas click → deselect
-canvas.addEventListener("click", () => {
+canvas.addEventListener("click", (e) => {
+  if (e.target !== canvas) return; // 🔥 ONLY empty canvas click
   clearSelection();
   updateSelectionUI();
 });

@@ -11,8 +11,9 @@ function createRectangle() {
   const elementData = {
     id,
     type: "rectangle",
-    x: 50,
-    y: 50,
+    x: 50 + editorState.elements.length * 20,
+    y: 50 + editorState.elements.length * 20,
+
     width: 150,
     height: 100,
     rotation: 0,
@@ -72,9 +73,9 @@ function renderElement(data) {
   el.style.zIndex = data.zIndex;
   el.dataset.id = data.id;
 
-el.addEventListener("click", handleElementClick);
-el.addEventListener("mousedown", onMouseDownDrag);
-canvas.appendChild(el);
-renderLayers();
+  el.addEventListener("click", handleElementClick);
+  el.addEventListener("mousedown", onMouseDownDrag);
+  canvas.appendChild(el);
+  renderLayers();
 
 }
